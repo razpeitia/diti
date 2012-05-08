@@ -146,28 +146,99 @@ header nav ul li a{
 #slider{
 	height:417px;
 	overflow: hidden;
-	position: relative;
 	padding: 0;
 	margin: 20px 0;
 }
 #slider ul{
 	padding: 0;
 	margin: 0;
-	position: relative;
+	height: 417px;
 }
 #slider ul li{
 	list-style: none;
 	padding: 0;
 	margin: 0; 
 	position: relative;
+	z-index: 5;
 }
-
 #slider ul li .aimg {
 	position: absolute;
-	display: block;
-	line-height: 0;
-}
-
-#slider ul li .noactive{
 	display: none;
+	line-height: 0;
+	text-decoration: none;
+}
+#slider ul li.active .aimg{
+	display: block;
+}
+#slider ul li.active .aimg img {
+	display: block;
+	position: relative;
+}
+#slider ul li.active .aimg span{
+	display: block;
+	position: relative;
+	height: 100px;
+	background: rgba(0,0,0,.20);
+	margin: -100px 0 0 0;
+	z-index: 100;
+	color: #FFF;
+	font-size: 3.5em;
+	padding: 55px 20px 20px 20px;
+	text-shadow: 0 0 8px #000;	
+}
+#slider ul li div {	
+	float: right;
+	clear: right;
+	padding: 10px;
+	width: 238px;
+	z-index: 15;
+	position: relative;
+	height: 82px;
+	border-bottom: 1px solid #9a9999;
+	border-top: 1px solid rgba(255,255,255, .25);
+}
+#slider ul li.active div{
+	background: rgba(0,0,0,.15)
+}
+#slider ul li div h3{
+	font-weight: normal;
+	font-size: 1.55em;
+	margin: 0px;
+	padding: 0px;
+	line-height: .9em;
+	letter-spacing: -.05em;
+}
+#slider ul li div h3 a{
+	text-decoration: none;
+}
+#slider ul li div p{
+	margin: 0;
+	font-size: .95em;
+	letter-spacing: -.05em;
+}
+#maincontent article{
+	width: 338px;
+	float: left;
+	margin: 10px;
+}
+#maincontent article h2{
+	font-weight: normal;
+	font-size: 2.2em;
+	letter-spacing: -.05em;
+	margin: 0;
+}
+#maincontent article img {
+	box-shadow: 0 0 5px rgba(0,0,0, .25);
+}
+#maincontent article .readlink {
+	display: block;
+	padding: 5px 0px;
+	width: 100px;
+	text-align:center;
+	text-decoration: none;
+	margin: auto;
+}
+footer{
+	clear: both;
+	margin-top:30px;
 }
