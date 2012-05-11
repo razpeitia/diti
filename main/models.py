@@ -9,6 +9,7 @@ class Page(models.Model):
     postimage = models.ImageField(upload_to='img/')
     resumen = models.TextField()
     content = models.TextField()
+    index = models.BooleanField()
     
     def __unicode__ (self):
         return self.title
@@ -23,3 +24,4 @@ class Slide(models.Model):
     
     def __unicode__ (self):
         return self.title
+    
