@@ -1,157 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8"> 
-	<title>diti -Desarrollo e Inovación en Tecnologias de la Información</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<<script type="text/javascript" src="js/modernizr.js"></script>
-</head>
-<body>
-	<div id="container">
-		<header>
-			<ul id="toplink">
-				<li><a href="#">Mapa del Sitio</a> |</li>
-				<li><a href="#">Acceso a Clientes</a> |</li>
-				<li><a href="#">Ayuda</a></li>
-			</ul>
-			<h1><a href="#">Diti - Desarrollo integral en tecnologías de la información</a></h1>
-			<form action="#" id="searchbox">
-				<div>
-					<input type="search" name="search" placeholder="Buscar en el sitio">
-					<input type="submit" value="Buscar" class="buttonblue">
-				</div>
-			</form>
-			<nav>
-				<ul class="graybars">
-					<li><a href="#">Inicio</a></li>
-					<li><a href="#">Servicios</a></li>
-					<li><a href="#">Productos</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Acerca de Nosotros</a></li>
-					<li><a href="#">Contacto</a></li>
-				</ul>
-			</nav>
-		</header>
-		<section id="maincontent" role="main">
+{% extends "base.html" %}
+{% block content %}
 			<section id="slider" class="graybars">
 				<ul>
+					{% for slide in slides_list %}
 					<li class="active">
-						<a href="#" class="aimg">
-							<img src="img/s1.jpg" alt="Chip RFID HF">
-							<span>Soluciones RFID</span>
+						<a href="{{ slide.url }}" class="aimg">
+							<img src="{{ slide.image }}" alt="{{ slide.imageTitle }}">
+							<span>{{ slide.imageTitle }}</span>
 						</a>
 
 						<div>
-							<h3><a href="#">Soluciones a medida en RFDI</a></h3>
-							<p>Soluciones avanzadas para todos los sectores: logística, salud, optimización de procesos, etc.</p>
+							<h3><a href="{{ slide.url }}">{{ slide.title }}</a></h3>
+							<p>{{ slide.content }}</p>
 						</div>
 					</li>
-					<li>
-						<a href="#" class="aimg">
-							<img src="img/s2.jpg" alt="Controles de Acceso Biometricos">
-							<span>Control de Acceso</span>
-						</a>
-						<div>
-							<h3><a href="#">Control de Acceso y Asistencia</a></h3>
-							<p>Sistemas independientes de Control de acceso y asistencia, sstemas biométrics.</p>
-						</div>
-					</li>
-					<li>
-						<a href="" class="aimg">
-							<img src="img/s1.jpg" alt="">
-							<span>Videovigilancia</span>
-						</a>
-						<div>
-							<h3><a href="">Videovigilancia</a></h3>
-							<p>Sistemas de monitoreo, CCTV, grabación digital, monitoreo por internet.</p>
-						</div>
-					</li>
-					<li>
-						<a href="" class="aimg">
-							<img src="img/s2.jpg" alt="">
-							<span>Telefonía IP</span>
-						</a>
-						<div>
-							<h3><a href="">Telefonía IP</a></h3>
-							<p>Conmutadores dígitales, Telefonía VoIP.</p>
-						</div>
-					</li>
+					{% endfor %}
 				</ul>
 			</section>
+			{% for page in pages_list %}
 			<article>
-				<h2>Telefonía IP</h2>
-				<img src="img/c1.jpg" alt="">
-				<p>Beard vice polaroid street art, PBR mustache fingerstache carles cliche thundercats blog williamsburg organic freegan. Brooklyn bushwick banh mi cray ethical. Four loko hella butcher cred pickled, single-origin coffee dreamcatcher master cleanse ethical thundercats kogi small batch seitan iphone american apparel. </p>
-				<a href="" class="readlink buttonblue">Leer más</a>
+				<h2>{{ page.title }}</h2>
+				<img src="{{ page.imageTitle }}" alt="">
+				<p>{{ page.resumen }}</p>
+				<a href="{{ page.slug }}" class="readlink buttonblue">Leer más</a>
 			</article>
-			<article>
-				<h2>RFID</h2>
-				<img src="img/c2.jpg" alt="">
-				<p>Beard vice polaroid street art, PBR mustache fingerstache carles cliche thundercats blog williamsburg organic freegan. Brooklyn bushwick banh mi cray ethical. Four loko hella butcher cred pickled, single-origin coffee dreamcatcher master cleanse ethical thundercats kogi small batch seitan iphone american apparel. </p>
-				<a href="" class="readlink buttonblue">Leer más</a>
-			</article>
-			<article>
-				<h2>Videovigilancia</h2>
-				<img src="img/c3.jpg" alt="">
-				<p>Beard vice polaroid street art, PBR mustache fingerstache carles cliche thundercats blog williamsburg organic freegan. Brooklyn bushwick banh mi cray ethical. Four loko hella butcher cred pickled, single-origin coffee dreamcatcher master cleanse ethical thundercats kogi small batch seitan iphone american apparel. </p>
-				<a href="" class="readlink buttonblue">Leer más</a>
-			</article>
-			<article>
-				<h2>Control de Acceso</h2>
-				<img src="img/c4.jpg" alt="">
-				<p>Beard vice polaroid street art, PBR mustache fingerstache carles cliche thundercats blog williamsburg organic freegan. Brooklyn bushwick banh mi cray ethical. Four loko hella butcher cred pickled, single-origin coffee dreamcatcher master cleanse ethical thundercats kogi small batch seitan iphone american apparel. </p>
-				<a href="" class="readlink buttonblue">Leer más</a>
-			</article>
-			<article>
-				<h2>Desarrollo Web</h2>
-				<img src="img/c5.jpg" alt="">
-				<p>Beard vice polaroid street art, PBR mustache fingerstache carles cliche thundercats blog williamsburg organic freegan. Brooklyn bushwick banh mi cray ethical. Four loko hella butcher cred pickled, single-origin coffee dreamcatcher master cleanse ethical thundercats kogi small batch seitan iphone american apparel. </p>
-				<a href="" class="readlink buttonblue">Leer más</a>
-			</article>
-			<article>
-				<h2>Desarrollo de Software</h2>
-				<img src="img/c6.jpg" alt="">
-				<p>Beard vice polaroid street art, PBR mustache fingerstache carles cliche thundercats blog williamsburg organic freegan. Brooklyn bushwick banh mi cray ethical. Four loko hella butcher cred pickled, single-origin coffee dreamcatcher master cleanse ethical thundercats kogi small batch seitan iphone american apparel. </p>
-				<a href="" class="readlink buttonblue">Leer más</a>
-			</article>
-		</section>
-		<footer class="graybars">
-			<section id="sols">
-				<h3>Soluciones a Medida</h3>
-				<ul>
-					<li><a href="">Telefonía IP</a></li>
-					<li><a href="">Soluciones RFID</a></li>
-					<li><a href="">Videovigilancia</a></li>	
-					<li><a href="">Control de Acceso</a></li>
-					<li><a href="">Desarrollo de Software a Medida</a></li>
-					<li><a href="">Diseño y Desarrollo de sitios web</a></li>
-				</ul>
-			</section>
-			<section>
-				<h3>Nuestro Blog</h3>
-				<ul>
-					<li>Gentrify gluten-free lomo, commodo next level. <a href="">Leer más...</a></li>
-					<li>Gentrify gluten-free lomo, commodo next level. <a href="">Leer más...</a></li>
-					<li>Gentrify gluten-free lomo, commodo next level. <a href="">Leer más...</a></li>
-				</ul>
-			</section>
-			<section>
-				<h3>Contacto</h3>
-				<p>contacto@ditisoluciones.com <br />(55)55-69-23-74</p>
-				<p>Adolfo Prieto 1439, Despacho 801
-				Col. Del Valle, Del. Benito Juárez,
-				México DF.</p>
-			</section>
-			<section id="socials">
-				<h3>Síguenos</h3>
-				<ul>
-					<li><a href="" id="twiticon">Twitter</a></li>
-					<li><a href="" id="faceicon">Facebook</a></li>
-				</ul>
-			</section>
-		</footer>
-		<p>&copy; 2012 - Revolución IP S.A.</p>
-	</div>
-</body>
-</html>
+{% endblock}
