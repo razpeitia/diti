@@ -1,5 +1,9 @@
-from django.views.generic import ListView
+from django.shortcuts import render_to_response
+from main.models import Slide, Page
 
-class IndexView(ListView):
-    template_name = "index.html"
-    
+def home(request):
+    response = {
+        "slides_list": Slide.objects.all(),
+        "pages_list": Page.objects.all(),
+    }
+    return render_to_response('index.html', response)
